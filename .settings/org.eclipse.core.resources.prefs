@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//WebContent/cliente/Menu.jsp=UTF-8
+encoding//WebContent/cliente/VerPedidos.jsp=UTF-8
+encoding//WebContent/comun/GestionPedido.jsp=UTF-8
+encoding//WebContent/comun/Products.jsp=UTF-8
+encoding//WebContent/html/Pie.jsp=UTF-8
+encoding//WebContent/invitado/Menu.jsp=UTF-8
+encoding//src/controller/TVGenerarFacturaPDF.java=UTF-8

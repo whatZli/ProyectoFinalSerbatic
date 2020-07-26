@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13-jul-2020 20:30:50 by Hibernate Tools 5.4.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="proyecto_web_gestion_tienda" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.CabeceraPedido" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="cabecera_pedido">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="idCliente" optimistic-lock="true" type="int" unique="false">
+            <column name="id_cliente" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="numPedido" optimistic-lock="true" type="int" unique="false">
+            <column name="num_pedido" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="importeTotal" optimistic-lock="true" type="int" unique="false">
+            <column name="importe_total" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="detallePedidos" optimistic-lock="true" sort="unsorted" table="detalle_pedido">
+            <key on-delete="noaction">
+                <column name="id_pedido" not-null="true"/>
+            </key>
+            <one-to-many class="model.DetallePedido" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

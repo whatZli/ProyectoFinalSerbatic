@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13-jul-2020 20:30:50 by Hibernate Tools 5.4.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="proyecto_web_gestion_tienda" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Trabajadores" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="trabajadores">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="model.Personas" embed-xml="true" fetch="select" insert="true" name="personas" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="id_persona" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="user" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="user" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="salario" optimistic-lock="true" type="double" unique="false">
+            <column name="salario" not-null="true" precision="22" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>

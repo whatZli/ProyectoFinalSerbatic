@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25-jun-2020 19:16:14 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="model.Producto" table="productos">
+		<id name="id" type="int">
+			<column name="ID" />
+		</id>
+		<property generated="never" lazy="false" name="descripcion"
+			type="java.lang.String">
+			<column name="descripcion" />
+		</property>
+		<property generated="never" lazy="false"
+			name="precioUnitarioSinIva" type="java.lang.Integer">
+			<column name="precio_unitario_sin_iva" />
+		</property>
+		<property generated="never" lazy="false" name="stock"
+			type="java.lang.Integer">
+			<column name="stock" />
+		</property>
+		<property generated="never" lazy="false" name="canjeable"
+			type="java.lang.Boolean">
+			<column name="canjeable" />
+		</property>
+		<property generated="never" lazy="false" name="descuento"
+			type="java.lang.Integer">
+			<column name="descuento" />
+		</property>
+		<property generated="never" lazy="false" name="rutaImagen"
+			type="java.lang.String">
+			<column name="ruta_imagen" />
+		</property>
+		<property generated="never" lazy="false"
+			name="borradoLogico" type="java.lang.Boolean">
+			<column name="borrado_logico" />
+		</property>
+	</class>
+</hibernate-mapping>

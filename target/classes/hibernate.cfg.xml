@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/proyecto_web_gestion_tienda</property>
+		<property name="hibernate.connection.username">root</property>
+		<!-- JDBC connection pool settings ... using built-in test pool -->
+		<property name="connection.pool_size">100</property>
+		<!-- Select our SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<mapping class="model.Productos" />
+		<mapping resource="Productos.hbm.xml" />
+
+		<mapping class="model.DetallePedido" />
+		<mapping resource="DetallePedido.hbm.xml" />
+
+		<mapping class="model.CabeceraPedido" />
+		<mapping resource="CabeceraPedido.hbm.xml" />
+
+		<mapping class="model.Clientes" />
+		<mapping resource="Clientes.hbm.xml" />
+
+		<mapping class="model.Personas" />
+		<mapping resource="Personas.hbm.xml" />
+
+		<mapping class="model.Mensajeria" />
+		<mapping resource="Mensajeria.hbm.xml" />
+
+		<mapping class="model.Trabajadores" />
+		<mapping resource="Trabajadores.hbm.xml" />
+
+		<!-- <mapping class="model.OpcCategoria" /> -->
+		<!-- <mapping resource="OpcCategoria.hbm.xml" /> -->
+
+		<mapping class="model.CategoriasProducto" />
+		<mapping resource="CategoriasProducto.hbm.xml" />
+
+		<mapping class="model.ValoracionesProductos" />
+		<mapping resource="ValoracionesProductos.hbm.xml" /> 
+
+	</session-factory>
+</hibernate-configuration>

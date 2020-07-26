@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13-jul-2020 20:30:50 by Hibernate Tools 5.4.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="proyecto_web_gestion_tienda" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Mensajeria" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="mensajeria">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="model.Personas" embed-xml="true" fetch="select" insert="true" name="personas" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="id_origen" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="idDestinatario" optimistic-lock="true" type="int" unique="false">
+            <column name="id_destinatario" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="adjunto" optimistic-lock="true" type="binary" unique="false">
+            <column name="adjunto" not-null="false"/>
+        </property>
+        <property generated="never" lazy="false" name="asunto" optimistic-lock="true" type="string" unique="false">
+            <column length="150" name="asunto" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="cuerpo" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="cuerpo" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaEnvio" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="fecha_envio" not-null="false"/>
+        </property>
+        <property generated="never" lazy="false" name="leido" optimistic-lock="true" type="boolean" unique="false">
+            <column name="leido" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="contestado" optimistic-lock="true" type="boolean" unique="false">
+            <column name="contestado" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

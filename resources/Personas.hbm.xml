@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13-jul-2020 20:30:50 by Hibernate Tools 5.4.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true"
+	default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="proyecto_web_gestion_tienda" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Personas" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="personas">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="nombre" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="apellido1" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="apellido1" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="apellido2" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="apellido2" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="dni" optimistic-lock="true" type="string" unique="false">
+            <column length="9" name="dni" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="pass" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pass" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="mail" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mail" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="sexo" optimistic-lock="true" type="string" unique="false">
+            <column length="1" name="sexo" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="edad" optimistic-lock="true" type="byte" unique="false">
+            <column name="edad" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="tipoPersona" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="tipo_persona" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaAlta" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="fecha_alta" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaBaja" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="fecha_baja" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="bajaLogica" optimistic-lock="true" type="boolean" unique="false">
+            <column name="baja_logica" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="clienteses" optimistic-lock="true" sort="unsorted" table="clientes">
+            <key on-delete="noaction">
+                <column name="id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="model.Clientes" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="mensajerias" optimistic-lock="true" sort="unsorted" table="mensajeria">
+            <key on-delete="noaction">
+                <column name="id_origen" not-null="true"/>
+            </key>
+            <one-to-many class="model.Mensajeria" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="trabajadoreses" optimistic-lock="true" sort="unsorted" table="trabajadores">
+            <key on-delete="noaction">
+                <column name="id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="model.Trabajadores" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
