@@ -51,7 +51,7 @@
 							<!-- 							<td><input class="form-control" type="text" value="1" /></td> -->
 							<td class="text-right">
 								<%
-									out.println(p.getPrecioUnitarioSinIva());
+									out.println(p.getPrecioUnitarioSinIva()-p.getPrecioUnitarioSinIva()*p.getDescuento()/100);
 								%>€  
 							</td>
 							<td><a
@@ -60,7 +60,7 @@
 							</a></td>
 						</tr>
 						<%
-							contadorPrecioTotal = contadorPrecioTotal + p.getPrecioUnitarioSinIva();
+							contadorPrecioTotal = contadorPrecioTotal + (p.getPrecioUnitarioSinIva()-p.getPrecioUnitarioSinIva()*p.getDescuento()/100);
 									}
 						%>
 
@@ -70,7 +70,7 @@
 							<td></td>
 							<td></td>
 							<td>Sub-Total</td>
-							<td class="text-right"><% out.println(contadorPrecioTotal); %> €</td>
+							<td class="text-right"><% out.println(contadorPrecioTotal); %> €</td> 
 						</tr>
 						<tr>
 							<td></td>

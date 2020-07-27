@@ -37,7 +37,7 @@
 
 				<p class="price-detail-wrap">
 					<span class="price h3 text-warning"> <span class="currency">EU
-					</span><span class="num"> ${producto.precioUnitarioSinIva}€</span>
+					</span><span class="num"> ${producto.precioUnitarioSinIva-producto.precioUnitarioSinIva*producto.descuento/100}€</span>
 					</span>
 				</p>
 				<!-- price-detail-wrap .// -->

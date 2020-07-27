@@ -39,7 +39,7 @@
 						</div>
 						<div class="product-content">
 							<div class="price">
-								${producto.precioUnitarioSinIva}€ <span>${producto.precioUnitarioSinIva}</span>
+								${producto.precioUnitarioSinIva-producto.precioUnitarioSinIva*producto.descuento/100}€ <span>${producto.precioUnitarioSinIva}€ </span>
 							</div>
 							<span class="product-shipping">En venta</span>
 							<h3 class="title">
